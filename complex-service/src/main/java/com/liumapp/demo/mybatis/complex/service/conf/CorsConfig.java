@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @date 6/13/18
  */
 @Configuration
-public class Config extends WebMvcConfigurerAdapter {
+public class CorsConfig extends WebMvcConfigurerAdapter {
 
 	@Override
     public void addCorsMappings(CorsRegistry registry) {

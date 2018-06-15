@@ -1,2 +1,15 @@
 server:
   port: 2020
+
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/test1
+      username: root
+      password: adminadmin
+      driver-class-name: com.mysql.jdbc.Driver
+    second:
+      url: jdbc:mysql://localhost:3306/test2
+      username: root
+      password: adminadmin
+      driver-class-name: com.mysql.jdbc.Driver
