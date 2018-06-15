@@ -10,6 +10,6 @@
   <name>mybatis-with-complex-source</name>
   <url>http://maven.apache.org</url>
   <modules>
-    <module>archetype-service</module>
+    <module>complex-service</module>
   </modules>
 </project>
