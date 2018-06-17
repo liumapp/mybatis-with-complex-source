@@ -7,15 +7,28 @@
  */
 <template>
 <div>
-  this is add-user component
-  <Form >
-
+  <Form ref="addUserForm" :model="addUserModel">
+    
   </Form>
 </div>
 </template>
 <script>
 import Util from '@/libs/util'
 export default {
-  name: 'add-user'
+  name: 'add-user',
+  data () {
+    return {
+      addUserModel: {
+        name: '',
+        age: 18,
+        sex: '男'
+      },
+      addUserRule: {
+        name: [],
+        age: [],
+        sex: []
+      }
+    }
+  }
 }
 </script>
