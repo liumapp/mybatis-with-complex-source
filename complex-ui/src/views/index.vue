@@ -16,17 +16,42 @@
           <Step title="复审" content="复审基础信息"></Step>
           <Step title="审核结果" content="展示审核结果"></Step>
         </Steps>
-        <upload-form v-if="current == 0" @setFormData="setFormData" @next="nextStep"></upload-form>
-        <first-check v-if="current == 1" @next="nextStep" @prev="prevStep" :formData="formData"></first-check>
-        <second-check v-if="current == 2" @next="nextStep" @prev="prevStep"></second-check>
-        <result v-if="current == 3"></result>
+        <add-users v-if="current == 0"></add-users>
+        <add-address v-if="current == 1"></add-address>
+        <add-order v-if="current == 2"></add-order>
+        <result-list v-if="current == 3"></result-list>
       </Card>
       </Col>
     </Row>
   </div>
 </template>
 <script>
+import AddAddress from '@/components/add-address'
+import AddOrder from '@/components/add-order'
+import AddUser from '@/components/add-user'
+import ResultList from '@/components/result-list'
+import Util from '@/components/libs/util'
 export default {
-  name: 'index'
+  name: 'index',
+  components: {
+    AddAddress, AddOrder, AddUsers, ResultList
+  },
+  data () {
+    return {
+      current: 0,
+      formData: {}
+    }
+  },
+  methods: {
+    setFormData (data) {
+      this.formData = data;
+    },
+    nextStep () {
+      this.current++;
+    },
+    prevStep () {
+      this.current--;
+    }
+  }
 }
 </script>
