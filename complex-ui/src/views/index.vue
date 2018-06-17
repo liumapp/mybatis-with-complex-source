@@ -16,7 +16,7 @@
           <Step title="复审" content="复审基础信息"></Step>
           <Step title="审核结果" content="展示审核结果"></Step>
         </Steps>
-        <add-users v-if="current == 0"></add-users>
+        <add-user v-if="current == 0"></add-user>
         <add-address v-if="current == 1"></add-address>
         <add-order v-if="current == 2"></add-order>
         <result-list v-if="current == 3"></result-list>
@@ -30,11 +30,11 @@ import AddAddress from '@/components/add-address'
 import AddOrder from '@/components/add-order'
 import AddUser from '@/components/add-user'
 import ResultList from '@/components/result-list'
-import Util from '@/components/libs/util'
+import Util from '@/libs/util'
 export default {
   name: 'index',
   components: {
-    AddAddress, AddOrder, AddUsers, ResultList
+    AddAddress, AddOrder, AddUser, ResultList
   },
   data () {
     return {
