@@ -14,8 +14,8 @@
     <FormItem label="年龄" prop="age">
       <Input type="text" v-model="addUserModel.age"></Input>
     </FormItem>
-    <FormItem label="性别" prop="sex">
-      <RadioGroup v-model="addUserModel.sex">
+    <FormItem label="性别" prop="sex" >
+      <RadioGroup v-model="addUserModel.sex" style="margin-top: -3px">
         <Radio label="男"></Radio>
         <Radio label="女"></Radio>
       </RadioGroup>
