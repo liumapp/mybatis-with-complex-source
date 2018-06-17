@@ -7,12 +7,12 @@
  */
 <template>
 <div>
-  <Form ref="addUserForm" :model="addUserModel">
+  <Form ref="addUserForm" :model="addUserModel" :rules="addUserRule">
     <FormItem label="姓名" prop="name">
       <Input type="text" v-model="addUserModel.name"></Input>
     </FormItem>
     <FormItem label="年龄" prop="age">
-      <Input type="text" v-model="addUserModel.age"></Input>
+      <Input type="text" v-model="addUserModel.age" number></Input>
     </FormItem>
     <FormItem label="性别" prop="sex" >
       <RadioGroup v-model="addUserModel.sex" style="margin-top: -3px">
@@ -21,8 +21,8 @@
       </RadioGroup>
     </FormItem>
     <FormItem>
-      <Button type="primary" @click="handleSubmit('checkMsgForm')">Submit</Button>
-      <Button type="ghost" @click="handleReset('checkMsgForm')">Reset</Button>
+      <Button type="primary" @click="handleSubmit('addUserForm')">Submit</Button>
+      <Button type="ghost" @click="handleReset('addUserForm')">Reset</Button>
     </FormItem>
   </Form>
 </div>
@@ -39,9 +39,24 @@ export default {
         sex: '男'
       },
       addUserRule: {
-        name: [],
-        age: [],
-        sex: []
+        name: [
+          {
+            type: 'string',
+            min: 2,
+            max: 20,
+            message: 'the username size shall be no more than 20 chars and no less than 2 chars ',
+            trigger: 'blur'
+          }
+        ],
+        age: [
+          {
+            type: 'number',
+            min: 18,
+            max: 100,
+            message: 'the age must be a number and between 18 to 100',
+            trigger: 'blur'
+          }
+        ]
       }
     }
   },
