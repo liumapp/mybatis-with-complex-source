@@ -8,9 +8,13 @@
 <template>
 <div>
   this is add-user component
+  <Form >
+
+  </Form>
 </div>
 </template>
 <script>
+import Util from '@/libs/util'
 export default {
   name: 'add-user'
 }
