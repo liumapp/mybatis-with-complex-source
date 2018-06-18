@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.service.conf;
+package com.liumapp.demo.mybatis.complex.api.conf;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;

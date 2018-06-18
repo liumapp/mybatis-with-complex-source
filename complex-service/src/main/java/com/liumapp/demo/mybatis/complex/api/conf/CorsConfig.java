@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.service.conf;
+package com.liumapp.demo.mybatis.complex.api.conf;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

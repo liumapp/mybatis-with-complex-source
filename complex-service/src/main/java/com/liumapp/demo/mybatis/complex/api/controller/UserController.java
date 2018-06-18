@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.service.controller;
+package com.liumapp.demo.mybatis.complex.api.controller;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.RequestMapping;
