@@ -1,6 +1,7 @@
 package com.liumapp.demo.mybatis.complex.api.db.testa.service.impl;
 
 import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddressExample;
 import com.liumapp.demo.mybatis.complex.api.db.testa.mapper.ShippingAddressMapper;
 import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,13 @@ public class ShippingAddressImpl implements ShippingAddressService {
     @Override
     public int insert(ShippingAddress shippingAddress) {
         return shippingAddressMapper.insert(shippingAddress);
+    }
+
+    @Override
+    public ShippingAddress selectByUserId(Long userId) {
+        ShippingAddressExample example = new ShippingAddressExample();
+        ShippingAddressExample.Criteria criteria = example.createCriteria();
+        criteria.andUseridEqualTo(userId);
+        return shippingAddressMapper.selectByExample(example).get(0);
     }
 }

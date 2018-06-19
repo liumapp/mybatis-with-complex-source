@@ -1,5 +1,7 @@
 package com.liumapp.demo.mybatis.complex.api.db.testb.service.impl;
 
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
 import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
 import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
 import com.liumapp.demo.mybatis.complex.api.db.testa.service.UserService;
@@ -37,8 +39,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDetail selectOrderDetail(Order order) {
-        OrderDetail orderDetail = new OrderDetail();
-//        User user = userService
+        User user = userService.selectByPrimaryKey(order.getUserid());
+        ShippingAddress shippingAddress = shippingAddressService.selectByUserId(order.getUserid());
+        OrderDetail orderDetail = new OrderDetail(order, user, shippingAddress);
         return orderDetail;
     }
 

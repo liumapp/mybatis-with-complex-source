@@ -1,5 +1,9 @@
 package com.liumapp.demo.mybatis.complex.api.entity;
 
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -30,6 +34,17 @@ public class OrderDetail implements Serializable {
 
     public OrderDetail() {
 
+    }
+
+    public OrderDetail(Order order, User user, ShippingAddress shippingAddress) {
+        this.orderId = order.getId();
+        this.userId = user.getId();
+        this.name = user.getName();
+        this.products = order.getProduct();
+        this.price = order.getPrice();
+        this.province = shippingAddress.getProvince();
+        this.city = shippingAddress.getCity();
+        this.area = shippingAddress.getArea();
     }
 
     public OrderDetail(Long orderId, Long userId, String name, String products, BigDecimal price, String province, String city, String area) {
