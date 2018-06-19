@@ -13,4 +13,6 @@ public interface UserService {
 
     int insert (User user);
 
+    User selectByPrimaryKey(Long userid);
+
 }
