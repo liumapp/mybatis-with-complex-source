@@ -13,4 +13,6 @@ public interface ShippingAddressService {
 
     int insert (ShippingAddress shippingAddress);
 
+    ShippingAddress selectByUserId (Long userId);
+
 }
