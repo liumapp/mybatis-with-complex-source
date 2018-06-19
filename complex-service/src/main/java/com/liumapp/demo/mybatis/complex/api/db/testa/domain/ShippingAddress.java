@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.api.testa.domain;
+package com.liumapp.demo.mybatis.complex.api.db.testa.domain;
 
 public class ShippingAddress {
     private Long id;

@@ -1,8 +1,8 @@
-package com.liumapp.demo.mybatis.complex.api.testa.service.impl;
+package com.liumapp.demo.mybatis.complex.api.db.testa.service.impl;
 
-import com.liumapp.demo.mybatis.complex.api.testa.domain.ShippingAddress;
-import com.liumapp.demo.mybatis.complex.api.testa.mapper.ShippingAddressMapper;
-import com.liumapp.demo.mybatis.complex.api.testa.service.ShippingAddressService;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.mapper.ShippingAddressMapper;
+import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

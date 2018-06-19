@@ -1,7 +1,7 @@
-package com.liumapp.demo.mybatis.complex.api.testb.service;
+package com.liumapp.demo.mybatis.complex.api.db.testb.service;
 
 import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
-import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
 
 /**
  * @author liumapp

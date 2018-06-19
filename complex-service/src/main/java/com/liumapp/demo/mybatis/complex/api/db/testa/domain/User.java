@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.api.testa.domain;
+package com.liumapp.demo.mybatis.complex.api.db.testa.domain;
 
 import java.util.Date;
 

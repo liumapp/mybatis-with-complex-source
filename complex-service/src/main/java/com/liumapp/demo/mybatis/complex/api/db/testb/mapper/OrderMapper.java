@@ -1,7 +1,7 @@
-package com.liumapp.demo.mybatis.complex.api.testb.mapper;
+package com.liumapp.demo.mybatis.complex.api.db.testb.mapper;
 
-import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
-import com.liumapp.demo.mybatis.complex.api.testb.domain.OrderExample;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.OrderExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

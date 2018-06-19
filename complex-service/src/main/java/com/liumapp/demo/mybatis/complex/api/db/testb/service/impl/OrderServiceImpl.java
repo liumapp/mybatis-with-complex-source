@@ -1,12 +1,11 @@
-package com.liumapp.demo.mybatis.complex.api.testb.service.impl;
+package com.liumapp.demo.mybatis.complex.api.db.testb.service.impl;
 
 import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
-import com.liumapp.demo.mybatis.complex.api.testa.domain.User;
-import com.liumapp.demo.mybatis.complex.api.testa.service.ShippingAddressService;
-import com.liumapp.demo.mybatis.complex.api.testa.service.UserService;
-import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
-import com.liumapp.demo.mybatis.complex.api.testb.mapper.OrderMapper;
-import com.liumapp.demo.mybatis.complex.api.testb.service.OrderService;
+import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
+import com.liumapp.demo.mybatis.complex.api.db.testa.service.UserService;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.mapper.OrderMapper;
+import com.liumapp.demo.mybatis.complex.api.db.testb.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

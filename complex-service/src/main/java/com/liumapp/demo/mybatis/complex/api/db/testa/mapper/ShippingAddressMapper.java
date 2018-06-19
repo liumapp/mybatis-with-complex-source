@@ -1,7 +1,7 @@
-package com.liumapp.demo.mybatis.complex.api.testa.mapper;
+package com.liumapp.demo.mybatis.complex.api.db.testa.mapper;
 
-import com.liumapp.demo.mybatis.complex.api.testa.domain.ShippingAddress;
-import com.liumapp.demo.mybatis.complex.api.testa.domain.ShippingAddressExample;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,8 +1,8 @@
 package com.liumapp.demo.mybatis.complex.api.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
-import com.liumapp.demo.mybatis.complex.api.testb.service.OrderService;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,8 +1,8 @@
 package com.liumapp.demo.mybatis.complex.api.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.liumapp.demo.mybatis.complex.api.testa.domain.ShippingAddress;
-import com.liumapp.demo.mybatis.complex.api.testa.service.ShippingAddressService;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
+import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

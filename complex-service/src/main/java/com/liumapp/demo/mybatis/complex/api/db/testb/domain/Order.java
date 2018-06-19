@@ -1,4 +1,4 @@
-package com.liumapp.demo.mybatis.complex.api.testb.domain;
+package com.liumapp.demo.mybatis.complex.api.db.testb.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;

@@ -1,13 +1,11 @@
-package com.liumapp.demo.mybatis.complex.api.testa.service.impl;
+package com.liumapp.demo.mybatis.complex.api.db.testa.service.impl;
 
-import com.liumapp.demo.mybatis.complex.api.testa.domain.User;
-import com.liumapp.demo.mybatis.complex.api.testa.mapper.UserMapper;
-import com.liumapp.demo.mybatis.complex.api.testa.service.UserService;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
+import com.liumapp.demo.mybatis.complex.api.db.testa.mapper.UserMapper;
+import com.liumapp.demo.mybatis.complex.api.db.testa.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.io.Serializable;
 
 /**
  * @author liumapp

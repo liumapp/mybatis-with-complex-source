@@ -1,6 +1,6 @@
-package com.liumapp.demo.mybatis.complex.api.testa.service;
+package com.liumapp.demo.mybatis.complex.api.db.testa.service;
 
-import com.liumapp.demo.mybatis.complex.api.testa.domain.User;
+import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
 
 /**
  * @author liumapp
