@@ -24,8 +24,7 @@ public class UserController {
 
     @RequestMapping("/add")
     public String addUser (@RequestBody User user) {
-        userService.insert(user);
-        return JSON.toJSONString("success");
+        return JSON.toJSONString(userService.insert(user));
     }
 
 }
