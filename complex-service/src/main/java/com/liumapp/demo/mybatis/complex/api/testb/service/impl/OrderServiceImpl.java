@@ -1,5 +1,9 @@
 package com.liumapp.demo.mybatis.complex.api.testb.service.impl;
 
+import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
+import com.liumapp.demo.mybatis.complex.api.testa.domain.User;
+import com.liumapp.demo.mybatis.complex.api.testa.service.ShippingAddressService;
+import com.liumapp.demo.mybatis.complex.api.testa.service.UserService;
 import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
 import com.liumapp.demo.mybatis.complex.api.testb.mapper.OrderMapper;
 import com.liumapp.demo.mybatis.complex.api.testb.service.OrderService;
@@ -21,8 +25,22 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ShippingAddressService shippingAddressService;
+
     @Override
     public int insert(Order order) {
         return orderMapper.insert(order);
     }
+
+    @Override
+    public OrderDetail selectOrderDetail(Order order) {
+        OrderDetail orderDetail = new OrderDetail();
+//        User user = userService
+        return orderDetail;
+    }
+
 }
