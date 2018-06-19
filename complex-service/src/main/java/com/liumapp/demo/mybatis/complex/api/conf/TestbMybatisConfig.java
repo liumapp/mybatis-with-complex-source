@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * @date 6/19/18
  */
 @Configuration
-@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testb"})
+@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testb.mapper"})
 public class TestbMybatisConfig {
 
     @Bean
