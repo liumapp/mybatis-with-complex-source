@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * @date 6/19/18
  */
 @Configuration
-@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testb.mapper"})
+@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testb.mapper"}, sqlSessionTemplateRef = "testbSqlSessionTemplate")
 public class TestbMybatisConfig {
 
     @Bean(name = "testbSqlSessionFactory")
@@ -38,8 +38,8 @@ public class TestbMybatisConfig {
         }
     }
 
-    @Bean
-    public SqlSessionTemplate userSqlSessionTemplate(@Qualifier("testbSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    @Bean(name = "testbSqlSessionTemplate")
+    public SqlSessionTemplate testbSqlSessionTemplate(@Qualifier("testbSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         SqlSessionTemplate template = new SqlSessionTemplate(sqlSessionFactory); // 使用上面配置的Factory
         return template;
     }
