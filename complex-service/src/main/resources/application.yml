@@ -30,9 +30,9 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 18800
 
-#mybatis:
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #  mapper-locations: classpath*:mappers*/*Mapper.xml
 
 

@@ -23,8 +23,7 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testb.mapper"})
 public class TestbMybatisConfig {
 
-    @Bean
-    @Qualifier("testbSqlSessionFactory")
+    @Bean(name = "testbSqlSessionFactory")
     public SqlSessionFactory testaSqlSessionFactory(@Qualifier("secondDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);

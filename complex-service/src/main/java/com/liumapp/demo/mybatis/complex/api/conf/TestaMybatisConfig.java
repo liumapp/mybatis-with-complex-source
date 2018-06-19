@@ -7,6 +7,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 
@@ -23,8 +24,8 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.db.testa.mapper"},sqlSessionTemplateRef = "userSqlSessionTemplate")
 public class TestaMybatisConfig {
 
-    @Bean
-    @Qualifier("testaSqlSessionFactory")
+    @Primary
+    @Bean(name = "testaSqlSessionFactory")
     public SqlSessionFactory testaSqlSessionFactory(@Qualifier("primaryDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
