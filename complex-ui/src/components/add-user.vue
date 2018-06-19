@@ -66,8 +66,7 @@ export default {
         if (valid) {
           util.post('user/add', this.checkMsgForm).then(res => {
             this.$Message.success('Success!');
-//            this.$emit('setFormData', this.checkMsgForm);
-//            this.$emit('next');
+            this.$emit('next');
           });
         } else {
           this.$Message.error('Fail!');
