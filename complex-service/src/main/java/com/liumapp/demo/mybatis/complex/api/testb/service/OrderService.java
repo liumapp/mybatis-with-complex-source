@@ -1,5 +1,6 @@
 package com.liumapp.demo.mybatis.complex.api.testb.service;
 
+import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
 import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
 
 /**
@@ -12,5 +13,7 @@ import com.liumapp.demo.mybatis.complex.api.testb.domain.Order;
 public interface OrderService {
 
     int insert (Order order);
+
+    OrderDetail selectOrderDetail (Order order);
 
 }

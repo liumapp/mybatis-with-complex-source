@@ -29,7 +29,7 @@ public class OrderController {
 
     @RequestMapping("/detail")
     public String getOrderDetail (@RequestBody Order order) {
-        return JSON.toJSONString("success");
+        return JSON.toJSONString(orderService.selectOrderDetail(order));
     }
 
 }
