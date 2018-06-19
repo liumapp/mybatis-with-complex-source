@@ -24,8 +24,7 @@ public class OrderController {
 
     @RequestMapping("/add")
     public String addOrder (@RequestBody Order order) {
-        orderService.insert(order);
-        return JSON.toJSONString("success");
+        return JSON.toJSONString(orderService.insert(order));
     }
 
     @RequestMapping("/detail")
