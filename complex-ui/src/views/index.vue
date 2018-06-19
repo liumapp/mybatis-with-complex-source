@@ -38,7 +38,8 @@ export default {
   },
   data () {
     return {
-      current: 0
+      current: 0,
+      userId: 0
     }
   },
   methods: {
