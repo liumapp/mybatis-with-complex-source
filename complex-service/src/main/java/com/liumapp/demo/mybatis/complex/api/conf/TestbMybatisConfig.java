@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author liumapp
- * @file MybatisTestbConfig.java
+ * @file TestbMybatisConfig.java
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
  * @date 6/19/18
