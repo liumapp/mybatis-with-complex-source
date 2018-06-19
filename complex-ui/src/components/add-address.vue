@@ -7,7 +7,7 @@
  */
 <template>
 <div>
-  this is add address component
+
 </div>
 </template>
 <script>

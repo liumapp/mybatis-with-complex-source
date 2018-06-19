@@ -67,8 +67,8 @@ export default {
           Util.post('user/add', this.addUserModel).then(res => {
             console.log(res);
             this.$Message.success('Success!');
-//            this.$emit('getUserId', res.data);
-//            this.$emit('next');
+            this.$emit('getUserId', res.data);
+            this.$emit('next');
           });
         } else {
           this.$Message.error('Fail!');
