@@ -12,9 +12,9 @@
       <Card>
         <Steps :current="current">
           <Step title="提交基础信息" content="上传基础用户信息"></Step>
-          <Step title="初核" content="审核基础信息"></Step>
-          <Step title="复审" content="复审基础信息"></Step>
-          <Step title="审核结果" content="展示审核结果"></Step>
+          <Step title="提交地址" content="用户提交收货地址"></Step>
+          <Step title="提交订单" content="用户提交订单信息"></Step>
+          <Step title="订单结果" content="展示订单结果"></Step>
         </Steps>
         <add-user v-if="current == 0"></add-user>
         <add-address v-if="current == 1"></add-address>

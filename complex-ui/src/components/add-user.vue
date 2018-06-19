@@ -64,10 +64,10 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          util.post('/info', this.checkMsgForm).then(res => {
+          util.post('user/add', this.checkMsgForm).then(res => {
             this.$Message.success('Success!');
-            this.$emit('setFormData', this.checkMsgForm);
-            this.$emit('next');
+//            this.$emit('setFormData', this.checkMsgForm);
+//            this.$emit('next');
           });
         } else {
           this.$Message.error('Fail!');
