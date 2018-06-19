@@ -7,11 +7,28 @@
  */
 <template>
 <div>
-
+  <Form ref="addAddressForm">
+    
+  </Form>
 </div>
 </template>
 <script>
+import Util from '@/libs/util'
 export default {
-  name: 'add-address'
+  name: 'add-address',
+  data () {
+    return {
+      addAddressModel: {
+
+      },
+      addAddressRule: {
+
+      }
+    }
+  },
+  methods: {
+
+  }
+
 }
 </script>
