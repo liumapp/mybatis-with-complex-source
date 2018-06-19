@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * @date 6/19/18
  */
 @Configuration
-@MapperScan(basePackages = {""})
-public class MybatisTestaConfig {
+@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.testa"},sqlSessionTemplateRef = "userSqlSessionTemplate")
+public class TestaMybatisConfig {
 
 
 

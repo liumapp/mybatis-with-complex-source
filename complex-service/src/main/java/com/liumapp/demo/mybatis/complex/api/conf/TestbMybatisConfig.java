@@ -1,5 +1,6 @@
 package com.liumapp.demo.mybatis.complex.api.conf;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * @date 6/19/18
  */
 @Configuration
-public class MybatisTestbConfig {
+@MapperScan(basePackages = {"com.liumapp.demo.mybatis.complex.api.testb"})
+public class TestbMybatisConfig {
 
 
 
