@@ -33,4 +33,6 @@ Using mybatis in SpringBoot with complex data source .
     
     ![5.jpg](https://github.com/liumapp/mybatis-with-complex-source/blob/master/pic/5.jpg)
     
-     
+### generate mybatis domain and mappers file 
+
+* because we have two database to connect      
