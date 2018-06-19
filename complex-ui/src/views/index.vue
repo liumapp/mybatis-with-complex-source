@@ -11,7 +11,7 @@
       <Col span="18" offset="3">
       <Card>
         <Steps :current="current">
-          <Step title="提交基础信息" content="上传基础用户信息" @next="nextStep"></Step>
+          <Step title="提交基础信息" content="上传基础用户信息" @next="nextStep" @getUserId="getUserId"></Step>
           <Step title="提交地址" content="用户提交收货地址" @next="nextStep" @prev="prevStep"></Step>
           <Step title="提交订单" content="用户提交订单信息" @next="nextStep" @prev="prevStep"></Step>
           <Step title="订单结果" content="展示订单结果" @prev="prevStep"></Step>
@@ -43,6 +43,9 @@ export default {
     }
   },
   methods: {
+    getUserId (id) {
+      this.userId = id;
+    },
     nextStep () {
       this.current++;
     },

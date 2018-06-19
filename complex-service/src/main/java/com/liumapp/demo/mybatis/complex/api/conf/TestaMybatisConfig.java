@@ -24,6 +24,7 @@ import javax.sql.DataSource;
 public class TestaMybatisConfig {
 
     @Bean
+    @Qualifier("testaSqlSessionFactory")
     public SqlSessionFactory testaSqlSessionFactory(@Qualifier("primaryDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);

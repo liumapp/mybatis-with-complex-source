@@ -24,6 +24,7 @@ import javax.sql.DataSource;
 public class TestbMybatisConfig {
 
     @Bean
+    @Qualifier("testbSqlSessionFactory")
     public SqlSessionFactory testaSqlSessionFactory(@Qualifier("secondDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
@@ -39,7 +40,7 @@ public class TestbMybatisConfig {
     }
 
     @Bean
-    public SqlSessionTemplate userSqlSessionTemplate(@Qualifier("testaSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate userSqlSessionTemplate(@Qualifier("testbSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         SqlSessionTemplate template = new SqlSessionTemplate(sqlSessionFactory); // 使用上面配置的Factory
         return template;
     }
