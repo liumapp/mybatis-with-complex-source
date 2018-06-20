@@ -49,9 +49,9 @@ the spring datasource config is :
     username: root
     password: adminadmin
     driver-class-name: com.mysql.jdbc.Driver
-    max-idle: 10
+    max-idle: 100
     max-wait: 10000
-    max-active: 10
+    max-active: 100
     min-idle: 5
     initial-size: 5
     validation-query: SELECT 1
@@ -80,7 +80,31 @@ plz pay attention to two point:
         INSERT INTO jdbc (`name`) VALUES ('Line 2: Lorem ipsum ...')
 
 * autoReconnect=true
-
+   
+    autoReconnect still throws the exception so you can choose to do something about the situation if you like.    
     
+    Alternatively, investigate setting the MySQL server variable "wait_timeout" to some high value rather than the default of 8 hours.
+    
+### max-idle & max-active
+
+* max-idle
+
+    (int) The maximum number of connections that should be kept in the pool at all times.
+     
+    Default value is maxActive:100 Idle connections are checked periodically (if enabled) and connections that been idle for longer than minEvictableIdleTimeMillis will be released. (also see testWhileIdle)
+
+* max-active
+
+    (int) The maximum number of active connections that can be allocated from this pool at the same time. The default value is 100
+
+say you have 100 max Active connections and say you set maxIdle to 80.
+ 
+Assuming there are no requests going to the database, only 80 connections will be tested (via the validationquery) and will stay active. 
+
+The other 20 will be closed. So at any point you can only have 80 idle connections.
+
+
+
+
 
     
