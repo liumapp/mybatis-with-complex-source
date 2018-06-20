@@ -8,9 +8,13 @@
 <template>
 <div>
   <Form ref="addAddressForm" :model="addAddressModel" :rule="addAddressRule">
-    <FormItem label="地址">
+    <FormItem label="地址" prop="address">
       <br>
-        <al-selector data-type="name" v-model="iviewAreaData" level="2" />
+      <al-selector data-type="name" v-model="addAddressModel.address" level="2"/>
+    </FormItem>
+    <FormItem>
+      <Button type="primary" @click="handleSubmit('addAddressForm')">Submit</Button>
+      <Button type="ghost" @click="handleReset('addAddressForm')">Reset</Button>
     </FormItem>
   </Form>
 </div>
@@ -21,19 +25,40 @@ export default {
   name: 'add-address',
   data () {
     return {
-      iviewAreaData: [],
       addAddressModel: {
-        province: '',
-        city: '',
-        area: ''
+        address: [],
       },
       addAddressRule: {
-        
+        address: []
       }
     }
   },
   methods: {
-
+    checkAddress () {
+      let length = this.addAddressModel.address.length;
+      console.log(length);
+      let negative = length == 1 ? this.$Message.error('请输入市区信息') : length == 2 ? this.$Message.error('请输入区域信息') : length == 0 ? this.$Message.error('地址信息请输入') : null;
+      if (negative === null) return true;
+      return false;
+    },
+    handleSubmit (name) {
+      this.$refs[name].validate((valid) => {
+        if (valid && this.checkAddress()) {
+          util.post('', {
+            province: this.addAddressModel.address[0],
+            city: this.addAddressModel.address[1],
+            area: this.addAddressModel.address[2]
+          }).then(res => {
+            this.$Message.success('Success!');
+          });
+        } else {
+          this.$Message.error('Fail!');
+        }
+      });
+    },
+    handleReset (name) {
+      this.$refs[name].resetFields();
+    },
   }
 
 }
