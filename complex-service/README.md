@@ -36,5 +36,5 @@ found all your insert node , and add content below :
   
 it will looks like : 
 
-    <insert id="insertSelective" parameterType="com.liumapp.demo.mybatis.complex.api.db.testa.domain.User">    
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.liumapp.demo.mybatis.complex.api.db.testa.domain.User">    
     
