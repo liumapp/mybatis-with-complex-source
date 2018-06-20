@@ -41,6 +41,7 @@ public class TradeServiceImpl implements TradeService {
     public TradeDetail selectOrderDetail(Trade trade) {
         User user = userService.selectByPrimaryKey(trade.getUserid());
         ShippingAddress shippingAddress = shippingAddressService.selectByUserId(trade.getUserid());
+        trade = tradeMapper.selectByPrimaryKey(trade.getId());
         TradeDetail tradeDetail = new TradeDetail(trade, user, shippingAddress);
         return tradeDetail;
     }

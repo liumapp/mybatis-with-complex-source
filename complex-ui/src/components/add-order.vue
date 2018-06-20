@@ -74,6 +74,7 @@ export default {
             price: this.addOrderModel.price
           }).then(res => {
             this.$Message.success('Success!');
+            this.$emit('getOrderId', res.data);
             this.$emit('next');
           });
         } else {

@@ -18,8 +18,8 @@
         </Steps>
         <add-user v-if="current == 0" @next="nextStep" @getUserId="getUserId"></add-user>
         <add-address v-if="current == 1" @next="nextStep" @prev="prevStep" :userId="userId"></add-address>
-        <add-order v-if="current == 2" @next="nextStep" @prev="prevStep" :userId="userId"></add-order>
-        <result-list v-if="current == 3" @prev="prevStep"></result-list>
+        <add-order v-if="current == 2" @next="nextStep" @prev="prevStep" :userId="userId" @getOrderId="getOrderId"></add-order>
+        <result-list v-if="current == 3" @prev="prevStep" :userId="userId" :orderId="orderId"></result-list>
       </Card>
       </Col>
     </Row>
@@ -46,6 +46,9 @@ export default {
   methods: {
     getUserId (id) {
       this.userId = id;
+    },
+    getOrderId (id) {
+      this.orderId = id;
     },
     nextStep () {
       this.current++;
