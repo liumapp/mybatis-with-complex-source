@@ -65,7 +65,6 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid) {
           Util.post('user/add', this.addUserModel).then(res => {
-            console.log(res);
             this.$Message.success('Success!');
             this.$emit('getUserId', res.data);
             this.$emit('next');
