@@ -62,9 +62,6 @@ export default {
       }
     };
   },
-  created () {
-    console.log("add-order created")
-  },
   methods: {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
