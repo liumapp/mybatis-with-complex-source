@@ -2,29 +2,29 @@ package com.liumapp.demo.mybatis.complex.api.db.testb.service.impl;
 
 import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
 import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
-import com.liumapp.demo.mybatis.complex.api.entity.OrderDetail;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade;
+import com.liumapp.demo.mybatis.complex.api.db.testb.mapper.TradeMapper;
+import com.liumapp.demo.mybatis.complex.api.entity.TradeDetail;
 import com.liumapp.demo.mybatis.complex.api.db.testa.service.ShippingAddressService;
 import com.liumapp.demo.mybatis.complex.api.db.testa.service.UserService;
-import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
-import com.liumapp.demo.mybatis.complex.api.db.testb.mapper.OrderMapper;
-import com.liumapp.demo.mybatis.complex.api.db.testb.service.OrderService;
+import com.liumapp.demo.mybatis.complex.api.db.testb.service.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author liumapp
- * @file OrderServiceImpl.java
+ * @file TradeServiceImpl.java
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
  * @date 6/19/18
  */
 @Service
 @Transactional
-public class OrderServiceImpl implements OrderService {
+public class TradeServiceImpl implements TradeService {
 
     @Autowired
-    private OrderMapper orderMapper;
+    private TradeMapper tradeMapper;
 
     @Autowired
     private UserService userService;
@@ -33,16 +33,16 @@ public class OrderServiceImpl implements OrderService {
     private ShippingAddressService shippingAddressService;
 
     @Override
-    public int insert(Order order) {
-        return orderMapper.insert(order);
+    public int insert(Trade trade) {
+        return tradeMapper.insert(trade);
     }
 
     @Override
-    public OrderDetail selectOrderDetail(Order order) {
-        User user = userService.selectByPrimaryKey(order.getUserid());
-        ShippingAddress shippingAddress = shippingAddressService.selectByUserId(order.getUserid());
-        OrderDetail orderDetail = new OrderDetail(order, user, shippingAddress);
-        return orderDetail;
+    public TradeDetail selectOrderDetail(Trade trade) {
+        User user = userService.selectByPrimaryKey(trade.getUserid());
+        ShippingAddress shippingAddress = shippingAddressService.selectByUserId(trade.getUserid());
+        TradeDetail tradeDetail = new TradeDetail(trade, user, shippingAddress);
+        return tradeDetail;
     }
 
 }

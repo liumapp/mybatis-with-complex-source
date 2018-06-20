@@ -2,19 +2,19 @@ package com.liumapp.demo.mybatis.complex.api.entity;
 
 import com.liumapp.demo.mybatis.complex.api.db.testa.domain.ShippingAddress;
 import com.liumapp.demo.mybatis.complex.api.db.testa.domain.User;
-import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * @author liumapp
- * @file OrderDetail.java
+ * @file TradeDetail.java
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
  * @date 6/19/18
  */
-public class OrderDetail implements Serializable {
+public class TradeDetail implements Serializable {
 
     private Long orderId;
 
@@ -32,22 +32,22 @@ public class OrderDetail implements Serializable {
 
     private String area;
 
-    public OrderDetail() {
+    public TradeDetail() {
 
     }
 
-    public OrderDetail(Order order, User user, ShippingAddress shippingAddress) {
-        this.orderId = order.getId();
+    public TradeDetail(Trade trade, User user, ShippingAddress shippingAddress) {
+        this.orderId = trade.getId();
         this.userId = user.getId();
         this.name = user.getName();
-        this.products = order.getProduct();
-        this.price = order.getPrice();
+        this.products = trade.getProduct();
+        this.price = trade.getPrice();
         this.province = shippingAddress.getProvince();
         this.city = shippingAddress.getCity();
         this.area = shippingAddress.getArea();
     }
 
-    public OrderDetail(Long orderId, Long userId, String name, String products, BigDecimal price, String province, String city, String area) {
+    public TradeDetail(Long orderId, Long userId, String name, String products, BigDecimal price, String province, String city, String area) {
         this.orderId = orderId;
         this.userId = userId;
         this.name = name;
