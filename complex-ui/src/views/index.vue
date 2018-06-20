@@ -38,8 +38,8 @@ export default {
   },
   data () {
     return {
-      current: 2,
-      userId: 0
+      current: 0,
+      userId: 1
     }
   },
   methods: {
