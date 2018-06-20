@@ -25,3 +25,16 @@ here is how to use them to generate mybatis domain and mapppers file .
 * run 
 
         mvn mybatis-generator:generate      
+
+## update xml file 
+
+because we need mybatis return id after insert success . so , we need update mappers file end with ".xml"
+
+found all your insert node , and add content below :
+
+    useGeneratedKeys="true" keyProperty="userId"
+  
+it will looks like : 
+
+    <insert id="insertSelective" parameterType="com.liumapp.demo.mybatis.complex.api.db.testa.domain.User">    
+    
