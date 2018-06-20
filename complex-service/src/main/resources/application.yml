@@ -15,7 +15,7 @@ spring:
       validation-query: SELECT 1
       test-on-borrow: false
       test-while-idle: true
-      time-between-eviction-runs-millis: 3600
+      time-between-eviction-runs-millis: 12000
     second:
       url: jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
       username: root
@@ -28,7 +28,7 @@ spring:
       validation-query: SELECT 1
       test-on-borrow: false
       test-while-idle: true
-      time-between-eviction-runs-millis: 3600
+      time-between-eviction-runs-millis: 12000
 
 mybatis:
   configuration:

@@ -101,7 +101,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order">
     insert into order (id, userId, product, 
       number, price, creatAt
       )
@@ -109,7 +109,7 @@
       #{number,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{creatat,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order">
+  <insert id="insertSelective" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order">
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
