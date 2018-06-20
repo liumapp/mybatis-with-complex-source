@@ -17,7 +17,7 @@
           <Step title="订单结果" content="展示订单结果"></Step>
         </Steps>
         <add-user v-if="current == 0" @next="nextStep" @getUserId="getUserId"></add-user>
-        <add-address v-if="current == 1" @next="nextStep" @prev="prevStep"></add-address>
+        <add-address v-if="current == 1" @next="nextStep" @prev="prevStep" :userId="userId"></add-address>
         <add-order v-if="current == 2" @next="nextStep" @prev="prevStep"></add-order>
         <result-list v-if="current == 3" @prev="prevStep"></result-list>
       </Card>
@@ -38,7 +38,7 @@ export default {
   },
   data () {
     return {
-      current: 1,
+      current: 0,
       userId: 0
     }
   },

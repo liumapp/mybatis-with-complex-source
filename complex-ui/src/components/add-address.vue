@@ -14,7 +14,6 @@
     </FormItem>
     <FormItem>
       <Button type="primary" @click="handleSubmit('addAddressForm')">Submit</Button>
-      <Button type="ghost" @click="handleReset('addAddressForm')">Reset</Button>
     </FormItem>
   </Form>
 </div>
@@ -23,8 +22,12 @@
 import Util from '@/libs/util'
 export default {
   name: 'add-address',
+  props: {
+    userId: 0
+  },
   data () {
     return {
+      addressUserId: 0,
       addAddressModel: {
         address: [],
       },
@@ -32,6 +35,9 @@ export default {
         address: []
       }
     }
+  },
+  created () {
+    this.addressUserId = this.userId;
   },
   methods: {
     checkAddress () {
@@ -44,20 +50,16 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid && this.checkAddress()) {
-          util.post('', {
+          Util.post('address/add', {
+            userid: this.addressUserId,
             province: this.addAddressModel.address[0],
             city: this.addAddressModel.address[1],
             area: this.addAddressModel.address[2]
           }).then(res => {
             this.$Message.success('Success!');
           });
-        } else {
-          this.$Message.error('Fail!');
         }
       });
-    },
-    handleReset (name) {
-      this.$refs[name].resetFields();
     },
   }
 
