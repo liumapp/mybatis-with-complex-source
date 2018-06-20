@@ -38,16 +38,16 @@
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
-               useActualColumnNames="true"
                selectByExampleQueryId="true"
-        ></table>
+        >
+        </table>
         <table tableName="shipping_address" domainObjectName="ShippingAddress"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
-               useActualColumnNames="true"
                selectByExampleQueryId="true"
-        ></table>
+        >
+        </table>
     </context>
 </generatorConfiguration>

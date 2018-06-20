@@ -30,7 +30,6 @@
 
         <javaClientGenerator targetPackage="com.liumapp.demo.mybatis.complex.api.db.testb.mapper"
                              targetProject="src/main/java" type="XMLMAPPER" >
-            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <table tableName="order" domainObjectName="Order"
@@ -38,8 +37,8 @@
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
-               useActualColumnNames="true"
                selectByExampleQueryId="true"
-        ></table>
+        >
+        </table>
     </context>
 </generatorConfiguration>
