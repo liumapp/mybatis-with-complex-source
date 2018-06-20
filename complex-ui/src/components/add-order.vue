@@ -14,6 +14,19 @@
 export default {
   name: 'add-order',
   props: {
+    userId: 0,
+  },
+  data () {
+    return {
+      addOrderModel: {
+
+      },
+      addOrderRule: {
+
+      }
+    };
+  },
+  methods: {
 
   }
 }

@@ -27,7 +27,6 @@ export default {
   },
   data () {
     return {
-      addressUserId: 0,
       addAddressModel: {
         address: [],
       },
@@ -35,9 +34,6 @@ export default {
         address: []
       }
     }
-  },
-  created () {
-    this.addressUserId = this.userId;
   },
   methods: {
     checkAddress () {
@@ -51,7 +47,7 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid && this.checkAddress()) {
           Util.post('address/add', {
-            userid: this.addressUserId,
+            userid: this.userId,
             province: this.addAddressModel.address[0],
             city: this.addAddressModel.address[1],
             area: this.addAddressModel.address[2]
