@@ -8,8 +8,9 @@
 <template>
 <div>
   <Form ref="addAddressForm" :model="addAddressModel" :rule="addAddressRule">
-    <FormItem>
-
+    <FormItem label="地址">
+      <br>
+        <al-selector data-type="name" v-model="iviewAreaData" level="2" />
     </FormItem>
   </Form>
 </div>
@@ -20,11 +21,14 @@ export default {
   name: 'add-address',
   data () {
     return {
+      iviewAreaData: [],
       addAddressModel: {
-
+        province: '',
+        city: '',
+        area: ''
       },
       addAddressRule: {
-
+        
       }
     }
   },
