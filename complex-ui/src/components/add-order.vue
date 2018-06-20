@@ -67,7 +67,7 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          Util.post('order/add', {
+          Util.post('trade/add', {
             userid: this.userId,
             product: this.addOrderModel.product,
             number: this.addOrderModel.number,

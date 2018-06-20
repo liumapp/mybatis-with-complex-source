@@ -39,7 +39,7 @@ export default {
   data () {
     return {
       current: 0,
-      userId: 1
+      userId: 0
     }
   },
   methods: {

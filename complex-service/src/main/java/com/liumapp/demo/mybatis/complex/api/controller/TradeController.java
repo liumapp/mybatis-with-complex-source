@@ -1,7 +1,7 @@
 package com.liumapp.demo.mybatis.complex.api.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Order;
+import com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade;
 import com.liumapp.demo.mybatis.complex.api.db.testb.service.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,21 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 6/19/18
  */
 @RestController
-@RequestMapping("order")
-public class OrderController {
+@RequestMapping("trade")
+public class TradeController {
 
     @Autowired
-    private TradeService orderService;
+    private TradeService tradeService;
 
     @RequestMapping("/add")
-    public String addOrder (@RequestBody Order order) {
-        orderService.insert(order);
-        return JSON.toJSONString(order.getId());
+    public String addOrder (@RequestBody Trade trade) {
+        tradeService.insert(trade);
+        return JSON.toJSONString(trade.getId());
     }
 
     @RequestMapping("/detail")
-    public String getOrderDetail (@RequestBody Order order) {
-        return JSON.toJSONString(orderService.selectOrderDetail(order));
+    public String getOrderDetail (@RequestBody Trade trade) {
+        return JSON.toJSONString(tradeService.selectOrderDetail(trade));
     }
 
 }
