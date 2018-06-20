@@ -7,8 +7,10 @@
  */
 <template>
 <div>
-  <Form ref="addAddressForm">
-    
+  <Form ref="addAddressForm" :model="addAddressModel" :rule="addAddressRule">
+    <FormItem>
+
+    </FormItem>
   </Form>
 </div>
 </template>
