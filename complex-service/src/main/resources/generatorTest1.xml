@@ -21,19 +21,16 @@
                             targetProject="src/main/java" >
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
-            <property name="useActualColumnNames" value="true" />
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mappers1"
                          targetProject="src/main/resources" >
             <property name="enableSubPackages" value="true"/>
-            <property name="useActualColumnNames" value="true" />
         </sqlMapGenerator>
 
         <javaClientGenerator targetPackage="com.liumapp.demo.mybatis.complex.api.db.testa.mapper"
                              targetProject="src/main/java" type="XMLMAPPER" >
             <property name="enableSubPackages" value="true"/>
-            <property name="useActualColumnNames" value="true" />
         </javaClientGenerator>
 
         <table tableName="user" domainObjectName="User"
@@ -41,6 +38,7 @@
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
+               useActualColumnNames="true"
                selectByExampleQueryId="true"
         ></table>
         <table tableName="shipping_address" domainObjectName="ShippingAddress"
@@ -48,6 +46,7 @@
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
+               useActualColumnNames="true"
                selectByExampleQueryId="true"
         ></table>
     </context>

@@ -1,54 +1,27 @@
-# SpringBootMavenArchetype
-this is a maven archetype , which will built a java program based on springboot
+# mybatis-generator
 
-### how to use it 
+because we have two database , named test1 and test2 . 
 
-* get the source code 
+so we need two mybatis generator config file named generatorTest1.xml and generatorTest2.xml
 
-* generate generated-sources folder , by the following code:
-
-```
-	
-	mvn archetype:create-from-project
-
-``` 
-
-* go to target/generated-sources/archetype , and make archetype installed to your local maven storage
-
-```
-
-	mvn install
-
-
-```
-
-* open the target/generated-sources/archetype/pom.xml , it should like this :
-
-```
-
-  <groupId>com.liumapp.SpringBootMavenArchetype</groupId>
-  <artifactId>SpringBootMavenArchetype-archetype</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>maven-archetype</packaging>
-
-```
-
-* build your new maven project anywhere you like :
-
-```
-mvn archetype:generate -DarchetypeGroupId=com.liumapp.SpringBootMavenArchetype -DarchetypeArtifactId=SpringBootMavenArchetype-archetype -DarchetypeVersion=1.0-SNAPSHOT
-
-```
-
-   or you can just enter :
+here is how to use them to generate mybatis domain and mapppers file .
  
-    mvn archetype:generate
- 
-   and then choice com.liumapp.SpringBootMavenArchetype like : 
-   
-   ![01](https://github.com/liumapp/imageFolder/blob/master/shell/archetype01.jpg)
+## generate test1 
 
-* enjoy your coding with SpringBoot
+* update pom.xml , config the configurationFile :
 
+      ${project.basedir}/src/main/resources/generatorTest1.xml
+      
+* run 
 
+        mvn mybatis-generator:generate      
 
+## generate test2
+
+* update pom.xml , config the configurationFile :
+
+      ${project.basedir}/src/main/resources/generatorTest2.xml
+      
+* run 
+
+        mvn mybatis-generator:generate      
