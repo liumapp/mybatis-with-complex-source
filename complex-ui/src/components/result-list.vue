@@ -7,11 +7,23 @@
  */
 <template>
 <div>
-  this is result list component
+  this is result-list
 </div>
 </template>
 <script>
 export default {
-  name: 'result-list'
+  name: 'result-list',
+  props: {
+
+  },
+  data () {
+
+  },
+  created () {
+
+  },
+  methods: {
+
+  }
 }
 </script>

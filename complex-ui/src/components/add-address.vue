@@ -35,6 +35,9 @@ export default {
       }
     }
   },
+  created () {
+    console.log("add-address created")
+  },
   methods: {
     checkAddress () {
       let length = this.addAddressModel.address.length;
