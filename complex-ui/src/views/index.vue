@@ -39,7 +39,8 @@ export default {
   data () {
     return {
       current: 0,
-      userId: 0
+      userId: 0,
+      orderId: 0
     }
   },
   methods: {

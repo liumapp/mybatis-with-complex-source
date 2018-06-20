@@ -6,8 +6,10 @@
  * @date 6/17/18
  */
 <template>
-<div>
-  this is result-list
+<div style="text-align:center">
+  <Row>
+    <Col span="8"></Col>
+  </Row>
 </div>
 </template>
 <script>
