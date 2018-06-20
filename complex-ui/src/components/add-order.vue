@@ -66,7 +66,9 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          Util.post('order/add', this.addOrderModel).then(res => {
+          Util.post('order/add', {}.push(this.addOrderModel).push({
+            userid: this.userId
+          })).then(res => {
             this.$Message.success('Success!');
             this.$emit('next');
           });
