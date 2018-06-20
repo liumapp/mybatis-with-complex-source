@@ -12,10 +12,10 @@
       <Input type="text" v-model="addOrderModel.product"></Input>
     </FormItem>
     <FormItem label="数量" prop="number">
-      <Input type="number" v-model="addOrderModel.number"></Input>
+      <Input v-model="addOrderModel.number"></Input>
     </FormItem>
     <FormItem label="售价" prop="price">
-      <Input type="number" v-model="addOrderModel.price"></Input>
+      <Input v-model="addOrderModel.price"></Input>
     </FormItem>
     <FormItem>
       <Button type="primary" @click="handleSubmit('addOrderForm')">Submit</Button>
@@ -25,6 +25,7 @@
 </div>
 </template>
 <script>
+import Util from '@/libs/util'
 export default {
   name: 'add-order',
   props: {
@@ -33,7 +34,7 @@ export default {
   data () {
     return {
       addOrderModel: {
-        product: '苹果/个',
+        product: '苹果',
         number: 100,
         price: 560.05
       },
@@ -66,9 +67,12 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          Util.post('order/add', {}.push(this.addOrderModel).push({
-            userid: this.userId
-          })).then(res => {
+          Util.post('order/add', {
+            userid: this.userId,
+            product: this.addOrderModel.product,
+            number: this.addOrderModel.number,
+            price: this.addOrderModel.price
+          }).then(res => {
             this.$Message.success('Success!');
             this.$emit('next');
           });
