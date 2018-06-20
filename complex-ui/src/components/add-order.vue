@@ -12,6 +12,9 @@
 </template>
 <script>
 export default {
-  name: 'add-order'
+  name: 'add-order',
+  props: {
+
+  }
 }
 </script>

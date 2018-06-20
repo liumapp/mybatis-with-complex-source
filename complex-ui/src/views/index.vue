@@ -18,7 +18,7 @@
         </Steps>
         <add-user v-if="current == 0" @next="nextStep" @getUserId="getUserId"></add-user>
         <add-address v-if="current == 1" @next="nextStep" @prev="prevStep" :userId="userId"></add-address>
-        <add-order v-if="current == 2" @next="nextStep" @prev="prevStep"></add-order>
+        <add-order v-if="current == 2" @next="nextStep" @prev="prevStep" :userId="userId"></add-order>
         <result-list v-if="current == 3" @prev="prevStep"></result-list>
       </Card>
       </Col>
@@ -38,7 +38,7 @@ export default {
   },
   data () {
     return {
-      current: 0,
+      current: 2,
       userId: 0
     }
   },

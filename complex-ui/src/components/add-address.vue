@@ -57,6 +57,7 @@ export default {
             area: this.addAddressModel.address[2]
           }).then(res => {
             this.$Message.success('Success!');
+            this.$emit('next');
           });
         }
       });
