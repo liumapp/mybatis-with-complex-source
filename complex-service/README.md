@@ -117,9 +117,43 @@ if you are using tomcat , you need to set :
 
 ### validation-query
 
+The validation query is a query run by the data source to validate that a Connection is still open before returning it
+
 ### test-on-borrow & test-while-idle
+
+* test-on-borrow
+
+    Most of the times, testOnBorrow is the least risky since it ensures (as best it can) that before a connection is returned from the pool for your use
+     
+    a basic sanity check has been made that the client and db-server are on talking terms.
+    
+    so , if your application is not under heavy traffic and can afford to validate a connection before taking 
+    
+    just hold of it.
+    
+* test-while-idle
+
+    if you have a busy application
+     
+    with very good database-connection-reliability 
+    
+    then you'll start seeing from the data
+    
+    that the COST of "validity check on every connection-request from the pool" outweighs the benefits of detecting connection issues.
+    
+    this will need both  time-between-eviction-runs-millis and min-evictable-idle-time-millis.    
 
 ### time-between-eviction-runs-millis & min-evictable-idle-time-millis
 
+only when your test-while-idle had been set true . 
 
+* time-between-eviction-runs-millis
+
+
+
+* min-evictable-idle-time-millis
+
+
+
+    
     
