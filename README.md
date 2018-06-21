@@ -35,4 +35,10 @@ Using mybatis in SpringBoot with complex data source .
     
 ### generate mybatis domain and mappers file 
 
-* because we have two database to connect      
+because we have two database to connect
+ 
+so there are two mybatis-generator config file named generatorTest1.xml and generatorTest2.xml in complex-service resources . 
+
+for more detail , plz enter complex-service folder .
+
+  
