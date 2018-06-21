@@ -52,8 +52,8 @@ the spring datasource config is :
     max-idle: 100
     max-wait: 10000
     max-active: 100
-    min-idle: 5
-    initial-size: 5
+    min-idle: 10
+    initial-size: 10
     validation-query: SELECT 1
     test-on-borrow: false
     test-while-idle: true
@@ -103,8 +103,23 @@ Assuming there are no requests going to the database, only 80 connections will b
 
 The other 20 will be closed. So at any point you can only have 80 idle connections.
 
+### max-wait
 
+The maximum number of milliseconds that the pool will wait (when there are no available connections) for a connection to be returned before throwing an exception
 
+### initial-size
+
+the number of connections of the pool
+
+if you are using tomcat , you need to set :
+
+        spring.datasource.tomcat.initial-size=x
+
+### validation-query
+
+### test-on-borrow & test-while-idle
+
+### time-between-eviction-runs-millis & min-evictable-idle-time-millis
 
 
     
