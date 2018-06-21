@@ -141,7 +141,9 @@ The validation query is a query run by the data source to validate that a Connec
     
     that the COST of "validity check on every connection-request from the pool" outweighs the benefits of detecting connection issues.
     
-    this will need both  time-between-eviction-runs-millis and min-evictable-idle-time-millis.    
+    this will need both  time-between-eviction-runs-millis and min-evictable-idle-time-millis.
+    
+test-on-borrow and test-while-idle can set true in the same time .         
 
 ### time-between-eviction-runs-millis & min-evictable-idle-time-millis
 
@@ -149,11 +151,15 @@ only when your test-while-idle had been set true .
 
 * time-between-eviction-runs-millis
 
+    The default time is 10000ms 
     
+    and a value of -1 indicates an indefinite time to wait. 
+    
+    Time between eviction: The number of milliseconds to sleep between runs of the thread that evicts unused connections from the JDBC pool.
 
 * min-evictable-idle-time-millis
 
-
+    idle connection time before close
 
     
     
